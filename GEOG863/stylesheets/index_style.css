@@ -38,9 +38,9 @@ img {
 }
 
 .portfolio h1 {
-	font-size: 32pt;
+	font-size: 26pt;
 	color: #DB3A34;
-	font-variant: small-caps;
+	text-transform: uppercase;
 	line-height: 0.5em;
 	text-align: center;
 	padding-top: 2%;
