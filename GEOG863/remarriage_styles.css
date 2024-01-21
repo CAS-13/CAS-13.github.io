@@ -1,0 +1,297 @@
+/* Whole document --v */
+html {
+	font-family: LucidaSans, sans-serif;
+}
+
+div {
+  margin: 2% 25% 2% 25%;
+}
+
+p {
+  /*font-family: LucidaSans, sans-serif;*/
+  font-size: 9pt;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+	word-break: break-all;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+list {
+  /*font-family: LucidaSans, sans-serif;*/
+  font-size: 9pt;
+}
+
+ul li {
+	list-style: none;
+	list-style-type: square;
+	margin-bottom: 6px;
+	margin-right: -25px;
+	list-style-position: hanging;
+	position: relative;
+	left: -25px;
+}
+
+table {
+  width: 100%;
+}
+
+hr {
+	position: relative;
+	left: 10px;
+}
+
+h1 {
+	font-family: Lucida-Bold, serif;
+	color: #353492;
+	font-size: 10pt;
+	text-transform: uppercase;
+}
+/* Whole document --^ */
+
+
+
+/* General column and page formatting --v */
+.breakpoint {
+	break-after: column;
+}
+
+div.page-break {
+	margin-bottom: 0px;
+}
+/* General column and page formatting --v */
+
+
+
+/* Title and authorship section --v */
+.doc-title th {
+	font-family: Lucida, "Roboto Serif", serif;
+	font-size: 22pt;
+  font-weight: 500;
+	color: #353492;
+  line-height: 0.75em;
+  border-bottom: 1px solid #a3a1a2;
+  text-align: left;
+	letter-spacing: .1rem;
+}
+
+.doc-title h2 {
+	font-family: Lucida, serif;
+	font-size: 14pt;
+  font-weight: 400;
+  font-style: italic;
+  color: #a8a7a7;
+	line-height: 0em;
+  letter-spacing: .1rem;
+}
+
+.doc-title p {
+  font-weight: 500;
+  line-height: 0.5em;
+}
+
+#docid {
+  font-weight: 600;
+  font-size: 7pt;
+}
+/* Title and authorship section --^ */
+
+
+
+/* Page 1 body --v */
+div.two-col {
+	column-count: 2;
+	column-gap: 20px;
+	position: relative;
+	left: 10px;
+	line-height: 1.15em;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.two-col img {
+	width: 275px;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1pt solid black;
+}
+/* Page 1 body --^ */
+
+
+
+/* Page 2 --v */
+div.three-col {
+	column-count: 3;
+	column-gap: 20px;
+	position: relative;
+	left: 10px;
+	line-height: 1.15em;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+/* Page 2 --^ */
+
+
+
+/* Footnotes --v */
+div.ref {
+	font-size: 7pt;
+	text-indent: 15px;
+	position: relative;
+	left: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.ref p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 7pt;
+	line-height: 0.75rem;
+}
+
+p.ref {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-indent: 15px;
+	font-size: 7pt;
+	line-height: 0.75rem;
+}
+
+th.border {
+	border-bottom: 1pt solid;
+	height: 0px;
+}
+
+.gap {
+	width: 20px;
+}
+
+.ref table {
+	width: 100%;
+}
+/* Footnotes --^ */
+
+
+
+/* Table 1 --v */
+.table1-info {
+	margin-bottom: 0px;
+}
+
+.table1-info p {
+	margin-top: 1px;
+	line-height: 1rem;
+	margin-bottom: 0px;
+}
+
+.table1-info h1 {
+	text-transform: capitalize;
+	letter-spacing: .05rem;
+	line-height: 0.75rem;
+	font-weight: 800;
+	margin-top: 1px;
+	margin-bottom: 3px;
+}
+
+.table1-data {
+	margin-top: 5px;
+	table-layout: fixed;
+	font-family: Helvetica-Bold, sans-serif;
+	font-size: 7pt;
+	text-align: right;
+}
+
+.table1-data table{
+	border-collapse: collapse;
+	border-bottom: 1px solid black;
+}
+
+.table1-data th {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-weight: normal;
+	
+}
+
+.header-col {
+	width: 17%;
+	border-right: 1px solid black;
+	height: 0.5em;
+}
+
+th.header-col {
+	text-align: center;
+}
+
+td.header-col {
+	text-align: left;	
+}
+
+.total-col {
+	width: 8%;
+	border-left: 1px solid black;
+	padding-top: 5px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: bottom;
+	height: 0.5em;
+}
+
+.data {
+	width: 7.5%;
+	border-left: 1px solid black;
+	empty-cells:show;
+	padding: 5px;
+	vertical-align: bottom;
+	height: 0.5em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.section {
+	text-transform: uppercase;
+	color: #353492;
+	font-weight: bold;
+}
+
+.total {
+	color: #353492;
+	font-weight: bold;
+	text-indent: 15%;
+}
+
+.label {
+	color: #353492;
+	font-weight: bold;
+	height: 1.4rem;
+	vertical-align: bottom;
+}
+
+.level2 > .header-col {
+	text-indent: 5%;
+}
+
+.level3 > .header-col {
+	text-indent: 10%;
+}
+
+.table1-data p {
+	text-align: left;
+	font-family: Helvetica-Bold, sans-serif;
+	font-size: 7pt;
+	line-height: 0.25em;
+}
+
+/* Table 1 --^ */

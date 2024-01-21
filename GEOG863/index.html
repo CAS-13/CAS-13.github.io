@@ -4,12 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Geospatial Web Application Development Portfolio</title>
-  <link rel="stylesheet" href="./style.css" />
+  
+	<! External Fonts >
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap&family=Hedvig+Letters+Serif:opsz@12..24&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	<! >
+	
 </head>
 
 <body>
-  <h1>Projects</h1>
-	<a href="https://experience.arcgis.com/experience/f9af7c3750b545bdbf0de77fb568046d/">U.S. Hospitals web app</a>
+	<header class="fixed-header">
+		<h1>Geospatial Web Application Development</h1>
+		<h2>Chris Stanley</h2>
+		<p>&nbsp;</p>
+	</header>
+
+  <div class="portfolio">
+		<h1>Portfolio</h1>
+		<hr />
+		<p>&nbsp</p>
+	</div>	
+		
+	<div class="gallery">			
+		<table class="gallery">
+					<tr>
+						<th>
+							<a href="https://experience.arcgis.com/experience/f9af7c3750b545bdbf0de77fb568046d/">
+								<img src="ushospitals.jpg" alt="Map of hospitals in the United States" width=300 height=200/>
+							</a>
+						</th>
+						
+						<th>
+							<a href="https://cas-13.github.io/GEOG863/remarriage.html">
+								<img src="remarriage.jpg" alt="Sample website replicating a document's format using HTML/CSS" width=300 height=200/>
+							</a>
+						</th>
+					</tr>
+					<tr>
+						<td class="desc">
+							<a href="https://experience.arcgis.com/experience/f9af7c3750b545bdbf0de77fb568046d/">U.S. Hospitals</a>
+							<p>This web map tool allows you to search for hospitals in the United States that meet user-specified criteria.</p>
+							<p class="ref">Data Source: Hospitals feature layer, Homeland Infrastructure Foundation-Level Data (HIFLD). Accessed January 6, 2024. Closed hospitals are filtered out of the dataset.</p>
+						</td>
+						
+						<td class="desc">
+							<a href="https://cas-13.github.io/GEOG863/remarriage.html">HTML/CSS Formatting Sample</a>
+							<p>This page provides a sample webpage for which HTML/CSS code was used to replicate a portion of the following document:</p>
+							<p><a class="noformat" href="https://cas-13.github.io/GEOG863/acs-30.pdf">Remarriage in the United States</a></p>
+						</td>
+					</tr>
+				</table>
+	</div>
+	
+	<div class="gallery2">
+		
+	</div>
+	
 </body>
 
 </html>
