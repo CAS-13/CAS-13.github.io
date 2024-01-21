@@ -1,0 +1,129 @@
+html, body {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color: #177E89;
+}
+
+header {
+	background-color: #323031;
+	padding: 1% 2% 1% 2%;
+	font-family: "Ubuntu", "Roboto", sans-serif;
+	line-height: 0em;
+}
+
+.fixed-header h1 {
+	font-size: 22pt;
+	letter-spacing: 0.2rem;
+	color: #FFFFFF;
+	font-variant: small-caps;
+	line-height: 1em;
+}
+
+.fixed-header h2 {
+	font-family: "Hedvig Letters Serif", "Lora", serif;
+	font-size: 14pt;
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	color: #FFC857;
+}
+
+.page_title {
+	width: 100%;
+	background-color: #FFFFFF;;
+	padding: 1%;
+	font-family: "Ubuntu", "Roboto", sans-serif;
+}
+
+.page_title h1 {
+	font-size: 26pt;
+	color: #DB3A34;
+	text-transform: uppercase;
+	line-height: 0.5em;
+	text-align: center;
+	padding-top: 2%;
+	letter-spacing: 0.3rem;
+	margin-top: 2rem;
+}
+
+.page_title p {
+	margin-bottom: 1rem;
+}
+
+.page_title hr {
+	width: 7%;
+	align: center;
+	border-top: 2px solid #177E89;
+}
+
+.portfolio {
+	margin: 5px 100px 5px 100px;
+}
+
+.gallery {
+	padding: 0.5%;
+	font-family: "Ubuntu", "Roboto", sans-serif;	
+}
+
+div.gallery {
+	margin: 100px 13px 0px 13px;
+	border: 2px solid #084C61;
+	float: left;
+	width: 300px;
+	height: 420px;
+	background-color: #FFFFFF;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+div.desc {
+	padding: 15px;
+	text-align: left;
+}
+
+hr.rule {
+	width: 50%;
+	align: center;
+	border-top: 2px solid #FFC857;
+	margin-bottom: 10px 0px 15px 0px;
+}
+
+.desc a {
+	color: #DB3A34;
+	text-decoration: none;
+	font-size: 14pt;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+	font-variant: small-caps;
+}
+
+.desc a:hover {
+	color: #FFC857;
+	text-decoration: underline;
+}
+
+.desc p {
+	font-size: 11pt;
+}
+
+p.ref {
+	font-style: italic;
+	font-size: 9pt;
+}
+
+a.noformat {
+	font-size: 11pt;
+	color: #DB3A34;
+	line-height: 1.25em;
+	text-decoration: none;
+	font-variant: none;
+	font-weight: normal;
+	letter-spacing: normal;
+	font-style: italic;
+}
