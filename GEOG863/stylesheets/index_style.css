@@ -33,7 +33,7 @@ header {
 }
 
 .page_title {
-	width: 100%;
+	width: 100vw;
 	background-color: #FFFFFF;;
 	padding: 1%;
 	font-family: "Ubuntu", "Roboto", sans-serif;
