@@ -74,7 +74,7 @@ div.gallery {
 	float: left;
 	width: 300px;
 	height: 420px;
-	background-color: #FFFFFF;
+	background-color: #177E89;
 }
 
 div.gallery img {
@@ -85,6 +85,7 @@ div.gallery img {
 div.desc {
 	padding: 15px;
 	text-align: left;
+	color: #FFFFFF;
 }
 
 hr.rule {
@@ -95,7 +96,7 @@ hr.rule {
 }
 
 .desc a {
-	color: #DB3A34;
+	color: #FFC857;
 	text-decoration: none;
 	font-size: 14pt;
 	font-weight: 600;
@@ -119,7 +120,7 @@ p.ref {
 
 a.noformat {
 	font-size: 11pt;
-	color: #DB3A34;
+	color: #FFC857;
 	line-height: 1.25em;
 	text-decoration: none;
 	font-variant: none;
