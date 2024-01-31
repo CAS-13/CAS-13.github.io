@@ -5,13 +5,24 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>My Hometown</title>
 
-    <link rel="stylesheet" href="stylesheets/hometown.css" />
+    <link rel="stylesheet" href="hometown.css" />
     <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.28/"></script>
     
   </head>
 
   <body>
-    <div id="viewDiv"><script src="scripts/hometown.js"></script></div>
+    <div id="viewDiv">
+      <script src="hometown.js"></script>
+      <script src='button.js'></script>
+      <button><input type="button" value="Reflection" onClick="displayText()"></input></button>
+      
+      <div id="reflection" style="display: none;">
+        <h2>Reflection</h2>
+        <p>Much of the content in this lesson was familiar to me because I took a course last summer that used ArcGIS Maps SDK for JavaScript. However, the use of the SDK made more sense in this lesson than it did last summer, either because I’ve seen it before or because of the way it was taught, though I suspect both were contributing factors. I also used Visual Studio Code to write the code this time around, which automatically adds closing braces and helps prevent some of my too-common errors. Whether it’s a feature of JavaScript in general or the SDK in particular, the SDK seems to have a lot of nested expressions, and it can be hard to keep track of them (or find errors later) if I don’t add the opening and closing braces at the same time.</p>
+        <p>Other than the summer class I took, I am not experienced with JavaScript, and I am still early in my learning journey in HTML and CSS, but I can see opportunities to include functionality beyond what the SDK covers, so I hope JavaScript is covered more broadly later in the course as well. In my hometown.html page, I wanted to include the reflection in a text box that could be displayed or hidden using a basic button so that it wouldn’t take up map real estate when it didn’t need to. I did eventually figure it out, but it took a lot of googling and trial and error. (I know it wasn’t required, but I decided I wanted to add it and then couldn’t let it go until I worked out how to do so).</p>
+        <p><a href="https://codepen.io/CAS28/pen/abMqzZE"><strong>CodePen for "About my Hometown" website</strong></a></p>
+      </div>
+    </div>
   </body>
 </html>

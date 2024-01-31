@@ -3,6 +3,67 @@ body,
 #viewDiv {
   padding: 0;
   margin: 0;
+  position: fixed;
   height: 100%;
   width: 100%;
+}
+
+button {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  height: auto;
+  width: auto;
+  background-color: brown;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover {
+  border: 2px solid brown;
+  background-color: white;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  font-size: 16pt;
+  color: white;
+  font-weight: 500;
+}
+
+input:hover {
+  color: brown;
+}
+
+#reflection {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+  height: auto;
+  width: 97%;
+  background-color: rgb(245, 243, 241);
+}
+
+p {
+  line-height: 1.25em;
+  font-size: 12pt;
+}
+
+h2 {
+  font-size: 12pt;
+  line-height: 0.05em;
+  
+}
+a {
+  text-decoration: none;
+  font-style: italic;
+  color: brown;
+  font-size: 12pt;
+}
+
+a:hover {
+  text-decoration: underline;
 }
