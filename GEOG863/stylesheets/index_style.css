@@ -1,6 +1,7 @@
 html, body {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
 }
 
 header {
-	width: 100vw;
+	width: 100%;
 	background-color: #323031;
 	padding: 1% 2% 1% 2%;
 	font-family: "Ubuntu", "Roboto", sans-serif;
@@ -21,6 +22,7 @@ header {
 	color: #FFFFFF;
 	font-variant: small-caps;
 	line-height: 1em;
+	width: 100vw;
 }
 
 .fixed-header h2 {
@@ -30,13 +32,16 @@ header {
 	font-weight: 400;
 	letter-spacing: 0.1rem;
 	color: #FFC857;
+	width: 100vw;
 }
 
 .page_title {
 	width: 100vw;
 	background-color: #FFFFFF;;
-	padding: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 	font-family: "Ubuntu", "Roboto", sans-serif;
+	margin-bottom: 120px;
 }
 
 .page_title h1 {
@@ -45,13 +50,15 @@ header {
 	text-transform: uppercase;
 	line-height: 0.5em;
 	text-align: center;
-	padding-top: 2%;
+	/*padding-top: 2%;*/
 	letter-spacing: 0.3rem;
-	margin-top: 2rem;
+	margin-top: 4rem;
+	width: 100vw;
 }
 
 .page_title p {
 	margin-bottom: 1rem;
+	width: 100vw;
 }
 
 .page_title hr {
@@ -61,16 +68,24 @@ header {
 }
 
 .portfolio {
-	margin: 5px 100px 5px 100px;
+	/*position: relative;
+	top: 120px;
+	left: 0px;
+	width: 100vw;*/
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	/*margin: 5px 100px 5px 100px;*/
 }
 
 .gallery {
-	padding: 0.5%;
+	/*padding: 0.5%;*/
 	font-family: "Ubuntu", "Roboto", sans-serif;	
 }
 
 div.gallery {
-	margin: 100px 13px 0px 13px;
+	margin-left: 30px;
+	margin-right: 30px;
 	/*border: 2px solid #084C61;*/
 	float: left;
 	width: 300px;
@@ -89,12 +104,12 @@ div.desc {
 	color: #FFFFFF;
 }
 
-hr.rule {
+/*hr.rule {
 	width: 50%;
 	align: center;
 	border-top: 2px solid #FFC857;
 	margin-bottom: 10px 0px 15px 0px;
-}
+}*/
 
 .desc a {
 	color: #FFC857;
