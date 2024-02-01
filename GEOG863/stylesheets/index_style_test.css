@@ -23,6 +23,7 @@ header {
 	color: #FFFFFF;
 	font-variant: small-caps;
 	line-height: 1em;
+	width: 100vw;
 }
 
 .fixed-header h2 {
@@ -32,10 +33,11 @@ header {
 	font-weight: 400;
 	letter-spacing: 0.1rem;
 	color: #FFC857;
+	width: 100vw;
 }
 
 .page_title {
-	width: 100%;
+	width: 100vw;
 	background-color: #FFFFFF;;
 	padding-top: 2%;
 	padding-bottom: 2%;
@@ -51,10 +53,12 @@ header {
 	/*padding-top: 2%;*/
 	letter-spacing: 0.3rem;
 	margin-top: 4rem;
+	width: 100vw;
 }
 
 .page_title p {
 	margin-bottom: 1rem;
+	width: 100vw;
 }
 
 .page_title hr {
