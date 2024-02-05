@@ -11,8 +11,15 @@ require(["esri/Map", "esri/views/MapView",
       Nickname: "The Cereal City",
       Population: "52,721 (2020 data)",
       Incorporated: "1859",
-      Known_for: "1) Birthplace of the cereal industry, including Kellogg's and Post\n 2) Stop on the Underground Railroad and home to Sojourner Truth for the last 27 years of her life\n 3) Battle Creek Sanitarium, led by Dr. John Harvey Kellogg"
+      Known_for: "<ul><li>Birthplace of the cereal industry, including Kellogg's and Post \
+                  <li>Stop on the Underground Railroad and home to Sojourner Truth for the last 27 years of her life \
+                  <li>Battle Creek Sanitarium, led by Dr. John Harvey Kellogg</ul>"
     };
+
+    const pt = new Point({
+      latitude: lat,
+      longitude: long 
+    });
 
     const map = new Map({
       basemap: "terrain"
@@ -22,12 +29,7 @@ require(["esri/Map", "esri/views/MapView",
       container: "viewDiv",
       map: map,
       zoom: 4,
-      center: [long, lat] // longitude, latitude
-    });
-  
-    const pt = new Point({
-      latitude: lat,
-      longitude: long 
+      center: pt // longitude, latitude
     });
 
     const sym = new SimpleMarkerSymbol({
@@ -38,30 +40,11 @@ require(["esri/Map", "esri/views/MapView",
 
     const popup = {
       title: "{Name}",
-      content: [
-        {
-          type: "fields",
-          fieldInfos: [
-            {
-              fieldName: "Name"
-            },
-            {
-              fieldName: "Nickname"
-            },
-            {
-              fieldName: "Population"
-            },
-            {
-              fieldName: "Incorporated"
-            },
-            {
-              fieldName: "Known_for",
-              label: "Known for"
-            }
-          ]
-        }
-      ]
-    }
+      content: "<p><strong>Nickname</strong>: {Nickname}</p> \
+                <p><strong>Population</strong>: {Population}</p> \
+                <p><strong>Incorporated</strong>: {Incorporated}</p> \
+                <p><strong>Known for</strong>: {Known_for}</p>"
+    };
 
     const ptGraphic = new Graphic({
       geometry: pt,
@@ -69,7 +52,6 @@ require(["esri/Map", "esri/views/MapView",
       attributes: cityInfo,
       popupTemplate: popup
     });
-
 
 
     view.graphics.add(ptGraphic);

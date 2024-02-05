@@ -6,3 +6,7 @@ body,
   height: 100%;
   width: 100%;
 }
+
+p {
+  line-height: 0.65em;
+}
