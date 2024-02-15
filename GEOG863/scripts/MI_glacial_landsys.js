@@ -97,7 +97,7 @@ require(["esri/Map",
   // POPUP
   // Create pop-up template
   const template = {
-    title: "{LDSYSTEM}",
+    title: "Glacial Landsystem",
     expressionInfos: [{
       name: "percentage",
       title: "% of total area that is each glacial landsystem",
@@ -107,7 +107,8 @@ require(["esri/Map",
       title: "formatted landsystem label",
       expression: "Proper($feature['LDSYSTEM'], 'firstword')"
     }],
-    content: "<b>{expression/landsysLbl}</b> makes up approximately {expression/percentage}% of Michigan's total land area."
+    content: "<h3 style='color:#5A88C1'>{expression/landsysLbl}</h3>" +
+    "<b>{expression/landsysLbl}</b> makes up approximately {expression/percentage}% of Michigan's total land area."
   };
  
 
@@ -125,7 +126,7 @@ require(["esri/Map",
     view: view,
     layerInfos: [{
       layer: featureLayer,
-      title: "Glacial Landsystems"
+      title: "Glacial Landsystem"
     }]
   });
 
