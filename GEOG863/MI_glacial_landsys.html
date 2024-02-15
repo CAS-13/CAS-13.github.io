@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Glacial Landsystems in Michigan</title>
+
+    <link rel="stylesheet" href="stylesheets/MI_glacial_landsys.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.28/"></script>
+    
+  </head>
+
+  <body>
+    <div id="titleDiv">Glacial Landsystems in Michigan</div>
+    <div id="viewDiv" class="esri-widget">
+      <script src="scripts/MI_glacial_landsys.js"></script>
+      <script src='scripts/button.js'></script>
+      <button>
+        <input type="button" value="Reflection" onClick="displayText()"></input>
+      </button>
+
+      <div id="reflection" style="display: none;">
+        <h2>Reflection</h2>
+        <p>This map displays the glacial landsystems in Michigan, which are described by the feature layer’s <a href="https://gis-michigan.opendata.arcgis.com/datasets/egle::glacial-landsystems/about">metadata summary</a> as "grouped areas based on similar surface formations and soil texture categories." The dataset includes ten distinct glacial landsystems.</p>
+        <p>Each glacial landsystem is symbolized with a fill color. To add the unique values to the renderer, I created a list of landsystems and a same-length list of colors and used a `for` loop to add the classes programatically.</p>
+        <p>The dataset I selected did not have many fields in its attribute table for inclusion in the pop-up - only landsystem, polygon count, shape area, and shape length. The only field that seemed interesting to include aside from landsystem was the shape area showing how much of the land in Michigan is made up of each glacial landsystem. However, the map units are in degrees, which is not simple to interpret directly nor convert to a more common unit of measurement, so instead, I elected to show the percentage of Michigan's land area that is made up of each glacial landsystem. To do so, I used an Arcade expression in the pop-up template to calculate the areal percentage for each glacial landsystem. (I calculated the total area in Excel and hard-coded the denominator).</p>
+        <p>The aspect of this assignment that I found the most challenging was figuring out all the components required to build a given map element and the nuances of each. I think I'm starting to get more comfortable with the API Reference, but many components have multiple sub-components (e.g., constructors or properties), each of which has its own specifications (and API Reference page). I find it challenging to keep all of the pieces straight. I also went a little beyond what we have done so far in class with the way I constructed my pop-up box because I wanted to provide useful information in a readable format, so I may have spent more time than was truly justified figuring that out. On the other hand, I did get a sense of some additional capabilities that are available as I was searching for the solution I wanted, so that was helpful.</p>
+    </div>
+  </body>
+</html>

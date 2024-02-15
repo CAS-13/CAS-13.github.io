@@ -4,7 +4,10 @@ require(["esri/Map", "esri/views/MapView",
          "esri/Graphic"], 
          (Map, MapView, Point, SimpleMarkerSymbol, Graphic) => {
     
-    let [lat, long] = [42.31763304970155, -85.18441222204387];
+    const pt = new Point({
+      latitude: 42.31763304970155,
+      longitude: -85.18441222204387 
+    });
 
     let cityInfo = {
       Name: "Battle Creek, Michigan",
@@ -15,11 +18,6 @@ require(["esri/Map", "esri/views/MapView",
                   <li>Stop on the Underground Railroad and home to Sojourner Truth for the last 27 years of her life \
                   <li>Battle Creek Sanitarium, led by Dr. John Harvey Kellogg</ul>"
     };
-
-    const pt = new Point({
-      latitude: lat,
-      longitude: long 
-    });
 
     const map = new Map({
       basemap: "terrain"
