@@ -21,7 +21,7 @@
       </button>
 
       <div id="reflection" style="display: none;">
-        <h2>Reflection</h2>
+        <h2 class="reflectHead">Reflection</h2>
         <p>This map displays the glacial landsystems in Michigan, which are described by the feature layer’s <a href="https://gis-michigan.opendata.arcgis.com/datasets/egle::glacial-landsystems/about">metadata summary</a> as "grouped areas based on similar surface formations and soil texture categories." The dataset includes ten distinct glacial landsystems.</p>
         <p>Each glacial landsystem is symbolized with a fill color. To add the unique values to the renderer, I created a list of landsystems and a same-length list of colors and used a `for` loop to add the classes programatically.</p>
         <p>The dataset I selected did not have many fields in its attribute table for inclusion in the pop-up - only landsystem, polygon count, shape area, and shape length. The only field that seemed interesting to include aside from landsystem was the shape area showing how much of the land in Michigan is made up of each glacial landsystem. However, the map units are in degrees, which is not simple to interpret directly nor convert to a more common unit of measurement, so instead, I elected to show the percentage of Michigan's land area that is made up of each glacial landsystem. To do so, I used an Arcade expression in the pop-up template to calculate the areal percentage for each glacial landsystem. (I calculated the total area in Excel and hard-coded the denominator).</p>
