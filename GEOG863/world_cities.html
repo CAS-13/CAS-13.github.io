@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>World Cities</title>
+
+    <link rel="stylesheet" href="stylesheets/world_cities.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.28/"></script>
+    
+  </head>
+
+  <body>
+    <!-- <div id="container"> -->
+    <div id="titleDiv">World Cities</div>
+    <div id="viewDiv" class="esri-widget">
+      <script src="scripts/world_cities.js"></script>
+      <script src="scripts/button.js"></script>
+      <button>
+        <input type="button" value="Reflection" onClick="displayText()"></input>
+      </button>
+
+      <div id="reflection" style="display: none;">
+        <h2 class="notEsri">Reflection</h2>
+        <p>Reflection goes here.</p>
+      </div>
+    </div>
+  <!-- </div> -->
+  </body>
+</html>
