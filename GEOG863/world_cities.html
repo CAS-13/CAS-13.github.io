@@ -23,7 +23,18 @@
 
       <div id="reflection" style="display: none;">
         <h2 class="notEsri">Reflection</h2>
-        <p>Reflection goes here.</p>
+        <p><strong>Summary:</strong></p>
+        <p>I selected the World Cities scenario primarily because the summary suggested that it was a bit tricker than the other scenarios, and I definitely found it challenging. I opted to use size rather than color to visualize population classes because it seemed more intuitive for the variable. However, in looking at the data, I noticed that population data was missing for many cities, so I used a class breaks renderer with two color variations to distinguish between cities for which population data was and was not available in the dataset.</p>
+        <p><strong>Notes on features I included in my app: </strong></p>
+        <ul>
+          <li>For the citiesLayer, I set the initial definitionExpression to "1=0" to prevent all the features from flashing on the screen before the remainder of the script finished executing and applied the continent filter. I extrapolated this method from an Esri sample that used "1=1" to display all features.
+          <li>I wrapped the prompt function in a do-while loop to validate the user's entry against the list of valid continent values. With more work, I could make the prompt more forgiving, but in its current version, the prompt is case sensitive. I included the list of valid values (minus Antarctica, which has no cities) in the prompt dialog box to facilitate accurate input.
+          <li>I added a function called getMapPosition to change the center of the map based on the continent the user entered. These values are hard-coded into a switch statement. I (briefly) researched getting the polygon's centroid programmatically, but it appeared to be more involved than I could manage for this assignment.
+        </ul>
+        <p><strong>Struggles: </strong></p>
+        <p>I struggled immensely on the query functionality in this lesson, particularly the multiple layers of nested functions and the ways inputs and outputs are passed. JavaScript seems more convoluted to me than Python, and tasks that would be easy in Python seem to trip me up. I made heavy use of console.log() in building my app, but I had a hard time figuring out what type of output functions created, and it seems that JavaScript calls almost everything an object, which doesn't necessarily help me figure out what properties or methods the object should have. I did eventually work out the core query functionality to build the app according to the requirements, but I am not as clear as I would like to be on exactly how and why that section works.</p>
+        <p>One refinement that I wanted to include was to programmatically get the prompt input's valid values from the continents layer. I think I figured out about 90% of it, including querying the layer and getting an array of the values, but I have not yet been able to figure out how to get it in the format I need. (This falls into the category of tasks that would be easy in Python, so I have felt very frustrated that I haven't been able to figure it out). I left a section of commented-out code in my script to show what I was trying to do and what progress I'd made. I would very much appreciate some guidance on how to get this section to work.
+        </p>
       </div>
     </div>
   <!-- </div> -->

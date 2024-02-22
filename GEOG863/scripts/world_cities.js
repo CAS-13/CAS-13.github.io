@@ -7,7 +7,6 @@ require([
     "esri/renderers/SimpleRenderer",
     "esri/renderers/ClassBreaksRenderer",
     "esri/widgets/Legend",
-    "esri/Graphic",
     "esri/layers/GraphicsLayer",
     "esri/rest/support/Query"
     ], (
@@ -19,13 +18,12 @@ require([
     SimpleRenderer, 
     ClassBreaksRenderer,
     Legend,
-    Graphic,
     GraphicsLayer,
     Query) => {
     
     
     // VARIABLES AND CONSTANTS
-    // Map position
+    // Initialize map position
     var center = [34, 8.635438];
 
     // Layers
@@ -56,6 +54,7 @@ require([
         content: "<strong>Total population</strong>: {expression/population}<br /><em>Source: {expression/source}</em>",
         overwriteActions: true
     };
+    
 
     // VISUAL VARIABLES
     // Size variable: population
@@ -121,12 +120,14 @@ require([
 
 
     // RENDERERS
-    // ClassBreaksRenderer for cities layer
+    // ClassBreaksRenderer for cities layer to distinguish cities for which 
+    // population data does and does not exist in the dataset.
+    // If POP=0, data does not exist.
     const citiesRenderer = new ClassBreaksRenderer({
         field: "POP",
         visualVariables: [sizeVar],
         legendOptions: {
-                title: "City data available?"
+                title: "City population data available?"
         }
     });
 
@@ -168,14 +169,40 @@ require([
         elevationInfo: {
             mode: "on-the-ground"
         },
-        definitionExpression: "1=0"
+        definitionExpression: "1=0" // Hide all features client-side by default
     });
 
-    // Prompt for continent and test against list of valid values
+
+    // // -----------------
+    // // This block of code is intended to programmatically get the list of valid values for validating the prompt input.
+    // // I think I almost have it, but I haven't figured out how to get the continent strings into a list (a la the continents
+    // // variable defined on line 39). 
+
+    // const allContQuery = {
+    //     where: "1=1",
+    //     returnGeometry: false,
+    //     returnDistinctValues: true,
+    //     outFields: ["CONTINENT"]
+    // }
+
+    // var allContinents = [];
+
+    // continentLayer.queryFeatures(allContQuery).then(function(results) {
+    //     results.features.forEach(function(item) {
+    //         allContinents.push(item.attributes.CONTINENT);
+    //         return allContinents;
+    //     });
+        
+    // });
+
+    // console.log(allContinents);
+    // // -----------------
+
+
+    // Prompt for continent and test against list of valid values.
+    // Continue to prompt until valid value is entered.
     do {
-        var requestedContinent = prompt("Enter a continent: ");
-        console.log(typeof requestedContinent);
-        console.log(continents.includes(requestedContinent));
+        var requestedContinent = prompt(`Enter a continent from the following options: Africa, Asia, Australia, Europe, Oceania, North America, or South America`, `Africa`);
     } while (!continents.includes(requestedContinent));
 
 
@@ -228,7 +255,6 @@ require([
 
     
     // QUERIES
-    // User-requested continent
     // Graphics layer to hold result of continents query (i.e., continent geometry feature set)
     const resultsLayer = new GraphicsLayer();
 
@@ -237,12 +263,14 @@ require([
     // var requestedContinent = "North America"; // DECLARED AS CONSTANT FOR BUILD/TEST
     var contWhereClause = "CONTINENT = '" + requestedContinent + "'";
 
+    // Query continent layer for geometry to use for spatial query
     const contQuery = new Query({
         where: contWhereClause,
         returnGeometry: true,
         outFields: ["CONTINENT"]
     });
 
+    // Spatial query of cities layer based on intersection with requested continent
     continentLayer.when(function() {
         citiesLayer.when(function() {
             return continentLayer.queryFeatures(contQuery);
@@ -250,7 +278,6 @@ require([
     });
 
     function findCities(selectedContinent) {
-        console.log("The cities are: ");
         selectedContinent.features.forEach(function(continent) {
             const cityQuery = new Query({
                 geometry: continent.geometry,
@@ -261,7 +288,6 @@ require([
 
             citiesLayer.queryFeatures(cityQuery).then(function(result) {
                 let cities = identifyCities(result, true);
-                console.log(cities);
                 return cities;
                 
             }).then(filterCities);
@@ -271,8 +297,9 @@ require([
     citiesList = [];
     var sqlString = "";
 
-    function identifyCities(results) {
-        
+    // Builds SQL where clause from cities returned from spatial query
+    // and filters citiesLayer using definitionExpression
+    function identifyCities(results) { 
         const cityFeatures = results.features.map(function(graphic) {
             citiesList.push(graphic.attributes.FID); 
             return graphic;
@@ -284,9 +311,9 @@ require([
     
     function filterCities(cities) {
         citiesWhereClause = "FID IN " + cities;
-        console.log(citiesWhereClause);
         citiesLayer.definitionExpression = citiesWhereClause;
     }
+
 
     // LEGEND
     const legend = new Legend({
@@ -297,6 +324,7 @@ require([
         }]
     });
 
+    // Add layers and legend to map
     map.add(continentLayer);
     map.add(citiesLayer);
     view.ui.add(legend, "bottom-left")

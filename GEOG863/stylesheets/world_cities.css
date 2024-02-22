@@ -85,10 +85,10 @@ input:hover {
   color: var(--dark);
 }
 
-p {
+p, li {
   font-family: 'Trebuchet MS', Calibri, sans-serif;
   line-height: 1.25em;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 .notEsri {
