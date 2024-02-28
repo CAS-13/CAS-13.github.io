@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>World Cities</title>
+
+    <link rel="stylesheet" href="stylesheets/world_cities_enhanced.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="scripts/world_cities_enhanced.js"></script>
+    <script src="scripts/panelDisplay.js"></script>
+    <script src="scripts/legendDisplay.js"></script>
+    
+  </head>
+
+  
+  <body>
+    <div id="titleDiv">World Cities</div>
+    
+    <div class="panel-container">
+      <div class="panel-side" id="panel-toggle" style="display: block;">
+        
+        <h2>Selected Cities</h2>
+        <ul id="list_cities">
+          <li>Loading&hellip;</li>
+        </ul>
+      </div>
+      <div id="viewDiv">
+        <div id="optionsDiv">
+          <div id="selectBox">
+            <b>Select a continent &nbsp;</b>
+            <select id="continentSelect">
+              <option value="">Select&hellip;</option>
+            </select>
+            <button>
+              <input type="button" id="lgdBtn" value="Hide Legend" onClick="legendDisplay()"></input>
+            </button>
+            <button>
+              <input type="button" id="cityBtn" value="Hide City List" onClick="displayPanel()"></input>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

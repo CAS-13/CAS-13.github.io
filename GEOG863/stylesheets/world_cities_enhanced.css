@@ -1,0 +1,241 @@
+:root {
+  --dark: #084594; /* #08519c */
+  --light: #eff3ff; 
+  --legend-display: block;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--light);
+}
+
+div {
+  border: none;
+}
+
+/* #viewDiv,
+#titleDiv {
+  display: flex;
+  flex-direction: column;
+} */
+
+#titleDiv {
+  background-color: var(--light);
+  color: var(--dark);
+  border-bottom: 4pt solid var(--dark);
+  padding: 5px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  height: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  width: 100%;
+  line-height: 1.25em;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 1;
+}
+
+/* #optionsDiv {
+  position: absolute;
+  top: 50px;
+  height: 25px;
+  width: 100%;
+  padding: 5px 20px;
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.5em;
+} */
+
+#selectBox {
+  position: absolute;
+  top: 48px;
+  height: 25px;
+  width: 100%;
+  padding: 5px 20px;
+  background-color: var(--dark);
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 11pt;
+  font-weight: 500;
+  color: var(--light);
+  line-height: 1.5em;
+}
+
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--light);
+}
+
+button {
+  /* position: relative;
+  right: 50%;
+  top: 55px;
+  height: 15px; */
+  margin-left: 20px;
+  width: auto;
+  background-color: var(--light);
+  border: none;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+button:hover {
+  border: 2px solid var(--light);
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 11pt;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+input:hover {
+  color: var(--light);
+}
+
+option, select {
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 11pt;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* #reflection {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+  height: auto;
+  width: 97%;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+p, li {
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+  line-height: 1.25em;
+  font-size: 11pt;
+}
+
+.notEsri {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 14pt;
+  line-height: 0.05em;
+  
+}
+a {
+  text-decoration: none;
+  font-style: italic;
+  color: var(--dark);
+  font-size: 12pt;
+}
+
+a:hover {
+  text-decoration: underline;
+} */
+
+.esriPopup .title {
+  width: 150px;
+}
+.esriPopup .titlePane {
+height: auto !important;
+}
+
+/* #selectBox {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  height: auto;
+  width: auto;
+  padding: 5px;
+  background-color: var(--dark);
+  color: white;
+  line-height: 1.5em;
+} */
+
+
+
+.panel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-side {
+  padding: 2px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: var(--light);
+  background-color: var(--dark);
+  border: 1px solid var(--light);
+  overflow: auto;
+  z-index: 60;
+}
+
+.panel-side h2 {
+  padding: 0 20px;
+  margin: 20px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18pt;
+  font-weight: 600;
+  line-height: 1.25em;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.panel-side ul {
+  list-style: none;
+  margin: 1px;
+  padding: 0;
+}
+
+.panel-side li {
+  padding: 5px 20px;
+  font-family: 'Trebuchet MS', Calibri, sans-serif;
+  letter-spacing: 0.05rem;
+  /* font-size: 11pt; */
+}
+
+.panel-result {
+  cursor: pointer;
+  margin: 2px 0;
+  background-color: var(--light);
+  opacity: 70%;
+  color: var(--dark);
+}
+
+.panel-result:hover,
+.panel-result:focus {
+  border: 1px solid var(--light);
+  opacity: 90%;
+}    
+
+div.esri-component.esri-legend.esri-widget {
+  display: var(--legend-display);
+}
