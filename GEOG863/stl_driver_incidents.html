@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>St. Louis Driver Incidents Involving Bicyclists and Pedestrians</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="stylesheets/stl_driver_incidents.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+    <script type="module" src="https://js.arcgis.com/calcite-components/2.5.1/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.5.1/calcite.css" />
+    
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="scripts/stl_driver_incidents.js"></script>
+    <script src="scripts/searchFunctions.js"></script>
+    <script src="scripts/infoButton.js"></script>
+    
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="titleDiv">Motor Vehicle Incidents Involving Bicyclists and Pedestrians in St. Louis, Missouri</div>
+      <div class="side-panel" id="side-panel-box">
+        <h1 class="side-panel-h1">Filter Results</h1>
+        <div class="criteria">
+          <div class="activity">
+            <h2 class="side-panel-h2" id="activityLabel">Activity</h2>
+            <button class="invisible" id="toggle-bike-activity" onclick="toggle('toggle-bike-activity', 'bikeIcon')" value="true"><img id="bikeIcon" class="pictureButton" src="https://cas-13.github.io/GEOG863/icons/bicycle-black.svg"></button>
+            <button class="invisible" id="toggle-ped-activity" onclick="toggle('toggle-ped-activity', 'walkingIcon')" value="true"><img class="pictureButton" id="walkingIcon" src="https://cas-13.github.io/GEOG863/icons/walking-black.svg"></button>
+            
+          </div>
+          <div class="severity">
+            <h2 class="side-panel-h2"  id="severityLabel">Severity</h2>
+            <select id="severitySelect">
+              <option value="All">All</option>
+              <option value="Property Damage">Property Damage</option>
+              <option value="Personal Injury">Personal Injury</option>
+              <option value="Fatal">Fatal</option>
+            </select>
+          </div>
+          
+          <div class="ward">
+            <h2 class="side-panel-h2" id="wardLabel">Ward</h2>
+            <select id="wardSelect">
+              <option value="All">All</option>
+            </select>
+          </div>
+          <div class="dates" id="dateLabel">
+            
+          </div>
+          
+          
+        </div>
+        
+      </div>
+      <div id="infoContainer">
+        <button id="mapInfoBtn" onClick="displayText()">About this map</button>
+      </div>
+      
+      <div class="mapDiv" id="viewDiv">
+        <div id="info" style="display: none;">
+          <h2>About this map</h2>
+          <p>Thematic data for this map were derived from two sources:</p>
+          <ul>
+            <li>Motor vehicle accident data comes from the <a href="https://www.mshp.dps.missouri.gov/MSHPWeb/SAC/stars_index.html">Missouri Statewide Traffic Accident Records System (STARS)</a> managed by the Missouri State Highway Patrol.</li>
+            <li>Community-report incidents are collected by members of the community via Esri's Survey123 and managed by the map's author.</li>
+          </ul>
+          <p>Motor vehicle accident data may have a week or two lag in reporting. Community-reported incidents is near-real time; however, reporting began in February 2024, so few incidents prior to that timeframe have been captured. <em>(Note: The community-reported incident data is primarily test data at this stage).</em></p>
+					<p>In addition, spatial data for St. Louis's 14 wards, which were updated in 2020, comes from the <a href="https://www.stlouis-mo.gov/data/">City of St. Louis Open Data portal</a>.</p>
+          <br>
+          <p id="footnote">Thank you to <a href="https://iconpacks.net/?utm_source=link-attribution&utm_content=18909">Icon by Iconpacks</a> for the SVG icons.</p>
+      </div>
+      </div>
+      
+    </div>
+
+  </body>
+

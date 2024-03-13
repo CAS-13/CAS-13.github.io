@@ -1,0 +1,217 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  background-color: #002642;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 1fr 9fr;
+  gap: 5px;
+}
+
+.titleDiv {
+  background-color: #02040F;
+  color: #E59500;
+  padding: 10px;
+  grid-column: span 2;
+  border-bottom: solid 5px #840032;
+  font-variant: small-caps;
+  font-size: 24pt;
+  text-align: center;
+  height: fit-content;
+}
+
+.mapDiv {
+  grid-column: 2;
+  border-radius: 1px 0px;
+}
+
+.side-panel {
+  grid-column: 1;
+  display: block;
+  max-width: 200px;
+}
+
+#side-panel-box {
+  display: block;
+  background-color: #E5DADA;
+  border-radius: 0px 1px;
+}
+
+.side-panel-h1 {
+  display: block;
+  text-align: center;
+  background-color:#E59500;
+  color:#02040F;
+  padding: 20px 10px;
+  margin: 0;
+  height: fit-content;
+  border-bottom: solid 5px #02040F;
+  font-size: 18pt;
+}
+
+.criteria {
+  padding-top: 30px;
+}
+
+.activity, .severity, .ward {
+  display: block;
+  text-align: center;
+}
+
+.side-panel-h2 {
+  padding-right: 25px;
+  padding-left: 10px;
+  font-size: 16pt;
+  margin-left: 10px;
+  color:#840032;
+  font-size: 14pt;
+
+}
+
+.pictureButton {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.invisible {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border-bottom: solid 1px #840032;
+  padding: 0px 10px 1px 10px;
+  margin-top: 18px;
+  margin-left: 13px;
+  margin-right: 3px;
+  height:fit-content;
+  vertical-align: bottom;
+}
+
+.invisible:hover {
+  background-color: rgba(132, 0, 50, .1);
+}
+
+.invisible:active {
+  border: solid 2px #840032;
+}
+
+
+#viewDiv {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  letter-spacing: 0.15em;
+}
+
+option, select {
+  display: block;
+  justify-self: center;
+  font-family: "Barlow", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 18px;
+  margin-left: 3px;
+  border-radius: 10%;
+  background-color: #E5DADA;
+  color:#02040F;
+  border: none;
+}
+
+.ward, .severity {
+  padding-top: 20px;
+}
+
+#wardSelect {
+  margin-left: 70px;
+}
+
+#severitySelect {
+  margin-left: 15px;
+}
+
+#infoContainer {
+  display: inline-flex;
+  position: absolute;
+  bottom: 0px;
+  width: 200px;
+  margin-top: 40px;
+  height: 50px;
+  border-top: solid 5px #E59500;
+  background-color: #02040F;
+}
+
+#info {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  left: 200px;
+  bottom: 55px;
+  height: auto;
+  width: 80%;
+  font-family: "Barlow", sans-serif;
+  font-size: 10pt;
+  color:#02040F;
+  background-color: #E5DADA;
+}
+
+#info a {
+  color:#840032;
+}
+
+#footnote {
+  font-size: 8pt;
+  font-style: italic;
+}
+
+#mapInfoBtn {
+  margin: 0px 40px;
+  padding: 0px 5px;
+  border: none;
+  justify-self: center;
+  font-family: "Barlow", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  height: 30px;
+  background-color: #02040F;
+  color: #E59500;
+}
+
+#mapInfoBtn:hover {
+  text-decoration: underline;
+}
+
+#basemapToggleDiv {
+  display: flex;
+  margin: 20px;
+}
+
+#layerListDiv {
+  display: flex;
+  margin: 20px;
+  background-color: #02040F;
+}
+
+.esri-time-slider__row:first-child {
+  background-color: #002642;
+}
+
+.esri-time-slider__time-extent-date, .esri-time-slider__time-extent-separator {
+  color:#E5DADA
+}
