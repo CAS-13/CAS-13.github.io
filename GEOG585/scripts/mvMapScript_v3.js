@@ -178,6 +178,12 @@ function init() {
 
   var defaultIcon = L.icon({
     iconUrl: iconsUrlDict["solidBlack"],
+    // iconUrl: function(feature) {
+    //   switch (features.properties.activity) {
+    //     case "Walking": return iconsUrlDict["solidBlack"];
+    //     case "Biking": return iconsUrlDict["solidGarnet"];
+    //   }
+    // },
     iconSize: [iconRadius, iconRadius]
   });
 
@@ -326,7 +332,9 @@ function init() {
       var activity = currentFeature.properties.activity;
       var grpSize = currentFeature.properties.group_size;
       var behavior = currentFeature.properties.driver_beh.replaceAll("_", " ").replaceAll(",", ", ").replaceAll("Exited vehicle and approached b", "Exited vehicle");
-      document.getElementById("info").innerHTML = "<h3>Community-reported incident</h3><b>" + date + "</b><p><b>Activity: </b>" + activity + "</p><p><b>Group Size: </b>" + grpSize + "</p><p><b>Driver Behavior: </b>" + behavior + "</p>";
+      var injuries = currentFeature.properties.injuries;
+      var fatalities = currentFeature.properties.fatalities;
+      document.getElementById("info").innerHTML = "<h3>Community-reported incident</h3><b>" + date + "</b><p><b>Activity: </b>" + activity + "</p><p><b>Group Size: </b>" + grpSize + "</p><p><b>Driver Behavior: </b>" + behavior + "</p><p><b>Injuries: </b>" + injuries + "</p><p><b>Fatalities: </b>" + fatalities + "</p>";
     }
   }
 
