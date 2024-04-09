@@ -71,7 +71,7 @@ function init() {
   
 
   // create Wards tile layer and add it to map
-  wardLabelTiles = L.tileLayer('https://geog585-l5-wt2.s3.us-east-2.amazonaws.com/WardLabelTiles/{z}/{x}/{y}.png');
+  wardLabelTiles = L.tileLayer('https://cas-13.github.io/GEOG585/tiles/WardLabelTiles/{z}/{x}/{y}.png');
   wardLabelTiles.addTo(map);
 
   // -----------------------------------------------------------------------------------
