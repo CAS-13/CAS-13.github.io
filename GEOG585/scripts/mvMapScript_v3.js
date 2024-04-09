@@ -67,7 +67,7 @@ function init() {
   // create Streets tile layer and add it to map
   // var streetTiles = L.tileLayer('https://geog585-l5-wt2.s3.us-east-2.amazonaws.com/STLBasemap/{z}/{x}/{y}.png');
   // var streetTiles = L.tileLayer('C:/Users/casta/OneDrive365/OneDrive/Documents/GitHub/CAS-13.github.io/GEOG585/tiles/STLBasemap/{z}/{x}/{y}.png');
-  var streetTiles = L.tileLayer("https://cas-13.github.io/GEOG585/tiles/STLBasemap/{z}/{x}/{y}.png");
+  var streetTiles = L.tileLayer("../tiles/STLBasemap/{z}/{x}/{y}.png");
   
 
   // create Wards tile layer and add it to map
