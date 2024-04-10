@@ -307,7 +307,7 @@ function init() {
         var bikeKilled = 0;
       
         for (let i=0;  i<numOfIncidents; i++) {
-          console.log(i);
+          // console.log(i);
           if (incidentsInWard.features[i].properties.activity === "Walking") {
             pedInjury = pedInjury + incidentsInWard.features[i].properties.injuries;
             pedKilled = pedKilled + incidentsInWard.features[i].properties.fatalities;
