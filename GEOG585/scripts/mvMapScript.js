@@ -342,7 +342,7 @@ function init() {
     "Ward labels": wardLabelTiles,
     "Ward boundaries": wardsLayer,
     "Ward risk rating": wardsRiskLayer,
-    "Community-report incidents": incidentsLayer,
+    "Community-reported incidents": incidentsLayer,
     "Motor vehicle accidents": crashMarkers
   };
 
