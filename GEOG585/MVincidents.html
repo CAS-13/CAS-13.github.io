@@ -3,30 +3,34 @@
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Motor Vehicle Incidents in St. Louis, Missouri</title>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" type="text/css" crossorigin="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" type="text/css" crossorigin="" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" crossorigin=""></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
-        <link rel="stylesheet" href="stylesheets/styleMV.css" type="text/css">
+        <script src="../Leaflet.markercluster-1.4.1/dist/leaflet.markercluster-src.js"></script>
+        <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.css" />
+	      <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css" />
+
+        <link rel="stylesheet" href="stylesheets/styleMVv2.css" type="text/css" />
        
-        <script src="scripts/mvMapScript_v3.js"></script>
-        <script src="geoJSON/STLcrashes.js"></script>
+        <script src="scripts/mvMapScript.js"></script>
+        <script src="geoJSON/stl_crashes.js"></script>
         <script src="geoJSON/wards4326.js"></script>
         <script src="geoJSON/incidents.js"></script>
       </head>
       <body onload="init()">
-        <h1 id="title">Motor Vehicle Incidents in St. Louis, Missouri</h1>
+        <div id="titlediv"><h1 id="title">Motor Vehicle Incidents in St. Louis, Missouri</h1></div>
     
         <div id="mapid"></div>
         
         <div id="info">
-					<!-- <p> -->
-          This page shows community-reported motor vehicle incidents between drivers and bicyclists or pedestrians. Click an incident to get more information.
-        <!-- </p> -->
+					<p>
+          This page shows motor vehicle crashes and community-reported motor vehicle incidents (CRI) between drivers and bicyclists or pedestrians. Click a ward or an incident to get more information.
+        </p>
+        <p>
+          Ward risk rating is based on the number of accidents involving bicyclists or pedestrians, taking into account the number of injuries and fatalities, since January 2002.
+        </p>
 			</div>
-      <!-- <div id="charts">
-        <p>[Charts go here]</p>
-      </div> -->
 
       </body>
     </html>
