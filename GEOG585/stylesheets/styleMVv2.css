@@ -110,3 +110,52 @@ table {
 h2 {
   margin-top: 0;
 }
+
+#infoContainer {
+  display: inline-flex;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  margin-top: 40px;
+  height: 50px;
+  
+}
+
+#about {
+  padding-left: 10px;
+  position: absolute;
+  right: 100px;
+  bottom: 55px;
+  height: auto;
+  width: 50%;
+  color:#02040F;
+  background-color: #E5DADA;
+  z-index: 1000;
+  border: solid 2px var(--darkBackground);
+}
+
+#about a {
+  color:#840032;
+}
+
+#footnote {
+  font-size: 8pt;
+  font-style: italic;
+}
+
+#mapInfoBtn {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-size: 11pt;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 0.05em;
+  height: 30px;
+  background-color: var(--darkBackground);
+  color: #E59500;
+}
+
+#mapInfoBtn:hover {
+  text-decoration: underline;
+}
