@@ -127,13 +127,15 @@ function init() {
         }
         
         function styleFeature () {
+          console.log(e.target);
           e.target.setStyle(wardSelectedStyle(e.target.feature));
           e.target.bringToFront();
           selection = e.target;
           selectedLayer = wardsLayer;
           
           // Insert HTML into the sidebar
-          var incidentsWithinWard = turf.pointsWithinPolygon(incidents, feature.geometry);
+          
+          var incidentsWithinWard = turf.pointsWithinPolygon(incidents, e.target.feature.geometry);
           buildSummaryLabel(feature, incidentsWithinWard);
         }
         
@@ -211,8 +213,9 @@ function init() {
           selectedLayer = wardsRiskLayer;
           
           // Insert HTML into the sidebar
-          var incidentsWithinWard = turf.pointsWithinPolygon(incidents, feature.geometry);
-          buildSummaryLabel(feature, incidentsWithinWard);
+          
+          var incidentsWithinRiskWard = turf.pointsWithinPolygon(incidents, e.target.feature.geometry);
+          buildSummaryLabel(feature, incidentsWithinRiskWard);
         }
         
         L.DomEvent.stopPropagation(e); // stop click event from being propagated further
@@ -260,7 +263,10 @@ function init() {
         e.target.setIcon(defaultSelectedIcon);
         selection = e.target;
         selectedLayer = incidentsLayer;
-
+        // console.log("feature");
+        // console.log(feature);
+        // console.log("e.target");
+        // console.log(e.target);
         buildSummaryLabel(feature);
         L.DomEvent.stopPropagation(e);
       }
@@ -362,11 +368,12 @@ function init() {
     else if (selectedLayer === wardsLayer) selectedLayer.resetStyle(selection);
     else if (selectedLayer === wardsRiskLayer) selectedLayer.resetStyle(selection);
 
-    document.getElementById("info").innerHTML = "This page shows community-reported motor vehicle incidents between drivers and bicyclists or pedestrians. Click an incident to get more information."
+    document.getElementById("info").innerHTML = "<p>This page shows motor vehicle crashes and community-reported motor vehicle incidents (CRI) between drivers and bicyclists or pedestrians. Click a ward or an incident to get more information.</p><p>Ward risk rating is based on the number of accidents involving bicyclists or pedestrians, taking into account the number of injuries and fatalities, since January 2002.</p>"
   }
 
   // Build HTML for info div using feature attributes
   function buildSummaryLabel (currentFeature, incidentsInWard) {
+    console.log(incidentsInWard);
     var dateObj;
       var date;
       var activity;
@@ -375,7 +382,7 @@ function init() {
       var injuries;
       var fatalities;
 
-    if (selectedLayer === wardsLayer || wardsRiskLayer) {
+    if ((selectedLayer === wardsLayer) || (selectedLayer === wardsRiskLayer)) {
       var district = currentFeature.properties.DISTRICT || "Unnamed feature";
       var summaryText;
       var numOfIncidents = incidentsInWard.features.length;
