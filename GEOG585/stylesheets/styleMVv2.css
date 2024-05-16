@@ -122,7 +122,7 @@ h2 {
 }
 
 #about {
-  padding-left: 10px;
+  padding: 10px 10px 10px 20px;
   position: absolute;
   right: 100px;
   bottom: 55px;
@@ -132,6 +132,7 @@ h2 {
   background-color: #E5DADA;
   z-index: 1000;
   border: solid 2px var(--darkBackground);
+  font-size: 11pt;
 }
 
 #about a {

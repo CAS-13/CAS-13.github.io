@@ -390,7 +390,7 @@ function init() {
       // Create table of pedestrian and bicyclist injuries and fatalities
       var casualties = countCasualties();
       // console.log(currentFeature.properties.total_injuries)
-      var details = "<table><tr><th></th><th>CRI</th><th>accidents</th></tr><tr><th>Pedestrian injuries  </th><td>" + casualties["pedInjuries"] + "</td><td>" + currentFeature.properties.ped_injuries + "</td></tr>" + "<tr><th>Pedestrian fatalities  </th><td>" + casualties["pedFatalities"] + "</td><td>" + currentFeature.properties.ped_fatalities + "</td></tr>" + "<tr><th>Bicyclist injuries  </th><td>" + casualties["bikeInjuries"] + "</td><td>" + currentFeature.properties.bike_injuries + "</td></tr>" + "<tr><th>Bicylcist fatalities  </th><td>" + casualties["bikeFatalities"] + "</td><td>" + currentFeature.properties.bike_fatalities + "</td></tr></table>";
+      var details = "<table><tr><th></th><th>CRI</th><th>accidents</th></tr><tr><th>Pedestrian injuries  </th><td>" + casualties["pedInjuries"] + "</td><td>" + currentFeature.properties.ped_injuries + "</td></tr>" + "<tr><th>Pedestrian fatalities  </th><td>" + casualties["pedFatalities"] + "</td><td>" + currentFeature.properties.ped_fatalities + "</td></tr>" + "<tr><th>Bicyclist injuries  </th><td>" + casualties["bikeInjuries"] + "</td><td>" + currentFeature.properties.bike_injuries + "</td></tr>" + "<tr><th>Bicyclist fatalities  </th><td>" + casualties["bikeFatalities"] + "</td><td>" + currentFeature.properties.bike_fatalities + "</td></tr></table>";
 
       // Modify summary text based on if and how many incidents were logged in the ward
       var total_accidents = currentFeature.properties.total_accidents + numOfIncidents;

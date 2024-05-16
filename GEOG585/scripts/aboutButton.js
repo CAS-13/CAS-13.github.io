@@ -4,7 +4,9 @@
 
 function displayText() {
   var text = document.getElementById("about");
+  console.log(text);
   var setting = text.style.display;
+  console.log(setting);
 
   if (setting == "block") {
       text.style.display = "none";
