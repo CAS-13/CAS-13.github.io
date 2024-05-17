@@ -1,42 +1,26 @@
 html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-
-#titleDiv {
-  background-color: rgb(90, 136, 193);
-  color: white;
-  padding: 5px;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  font-size: 18pt;
-  font-weight: 600;
+body,
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  height: 100%;
   width: 100%;
-  height: 30px;
-  line-height: 1em;
-  text-align: center;
-  opacity: 0.75;
 }
 
 button {
   position: absolute;
   left: 5%;
-  top: 10%;
+  top: 5%;
   height: auto;
   width: auto;
-  background-color: rgb(90, 136, 193);
+  background-color: brown;
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 button:hover {
-  border: 2px solid rgb(90, 136, 193);
+  border: 2px solid brown;
   background-color: white;
 }
 
@@ -49,10 +33,10 @@ input {
 }
 
 input:hover {
-  color: rgb(90, 136, 193);
+  color: brown;
 }
 
-#reflection {
+#about {
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
@@ -68,7 +52,7 @@ p {
   font-size: 12pt;
 }
 
-.reflectHead {
+h2 {
   font-size: 12pt;
   line-height: 0.05em;
   

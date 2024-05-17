@@ -15,12 +15,12 @@
     <div id="titleDiv">Glacial Landsystems in Michigan</div>
     <div id="viewDiv" class="esri-widget">
       <script src="scripts/MI_glacial_landsys.js"></script>
-      <script src='scripts/button.js'></script>
+      <script src='scripts/aboutButton.js'></script>
       <button>
         <input type="button" value="Reflection" onClick="displayText()"></input>
       </button>
 
-      <div id="reflection" style="display: none;">
+      <div id="about" style="display: none;">
         <h2 class="reflectHead">Reflection</h2>
         <p>This map displays the glacial landsystems in Michigan, which are described by the feature layer’s <a href="https://gis-michigan.opendata.arcgis.com/datasets/egle::glacial-landsystems/about">metadata summary</a> as "grouped areas based on similar surface formations and soil texture categories." The dataset includes ten distinct glacial landsystems.</p>
         <p>Each glacial landsystem is symbolized with a fill color. To add the unique values to the renderer, I created a list of landsystems and a same-length list of colors and used a `for` loop to add the classes programatically.</p>
