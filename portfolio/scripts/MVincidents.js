@@ -343,7 +343,7 @@ function init() {
     "Ward boundaries": wardsLayer,
     "Ward risk rating": wardsRiskLayer,
     "Community-reported incidents": incidentsLayer,
-    "Motor vehicle accidents": crashMarkers
+    "Motor vehicle crashes": crashMarkers
   };
 
   L.control.layers(baseLayers, overlays, {collapsed: false}).addTo(map);
@@ -368,7 +368,7 @@ function init() {
     else if (selectedLayer === wardsLayer) selectedLayer.resetStyle(selection);
     else if (selectedLayer === wardsRiskLayer) selectedLayer.resetStyle(selection);
 
-    document.getElementById("info").innerHTML = "<p>This page shows motor vehicle crashes and community-reported motor vehicle incidents (CRI) between drivers and bicyclists or pedestrians. Click a ward or an incident to get more information.</p><p>Ward risk rating is based on the number of accidents involving bicyclists or pedestrians, taking into account the number of injuries and fatalities, since January 2002.</p>"
+    document.getElementById("info").innerHTML = "<p>This page shows motor vehicle crashes and community-reported motor vehicle incidents (CRI) between drivers and bicyclists or pedestrians. Click on a ward or an incident to get more information.</p><p>Ward risk rating is based on the number of crashes involving bicyclists or pedestrians, taking into account the number of injuries and fatalities, since January 2002.</p>"
   }
 
   // Build HTML for info div using feature attributes
@@ -390,13 +390,13 @@ function init() {
       // Create table of pedestrian and bicyclist injuries and fatalities
       var casualties = countCasualties();
       // console.log(currentFeature.properties.total_injuries)
-      var details = "<table><tr><th></th><th>CRI</th><th>accidents</th></tr><tr><th>Pedestrian injuries  </th><td>" + casualties["pedInjuries"] + "</td><td>" + currentFeature.properties.ped_injuries + "</td></tr>" + "<tr><th>Pedestrian fatalities  </th><td>" + casualties["pedFatalities"] + "</td><td>" + currentFeature.properties.ped_fatalities + "</td></tr>" + "<tr><th>Bicyclist injuries  </th><td>" + casualties["bikeInjuries"] + "</td><td>" + currentFeature.properties.bike_injuries + "</td></tr>" + "<tr><th>Bicyclist fatalities  </th><td>" + casualties["bikeFatalities"] + "</td><td>" + currentFeature.properties.bike_fatalities + "</td></tr></table>";
+      var details = "<table><tr><th></th><th>CRI</th><th>Crashes</th></tr><tr><th>Pedestrian injuries  </th><td>" + casualties["pedInjuries"] + "</td><td>" + currentFeature.properties.ped_injuries + "</td></tr>" + "<tr><th>Pedestrian fatalities  </th><td>" + casualties["pedFatalities"] + "</td><td>" + currentFeature.properties.ped_fatalities + "</td></tr>" + "<tr><th>Bicyclist injuries  </th><td>" + casualties["bikeInjuries"] + "</td><td>" + currentFeature.properties.bike_injuries + "</td></tr>" + "<tr><th>Bicyclist fatalities  </th><td>" + casualties["bikeFatalities"] + "</td><td>" + currentFeature.properties.bike_fatalities + "</td></tr></table>";
 
       // Modify summary text based on if and how many incidents were logged in the ward
-      var total_accidents = currentFeature.properties.total_accidents + numOfIncidents;
+      var total_crashes = currentFeature.properties.total_crashes + numOfIncidents;
       var total_injuries = currentFeature.properties.total_injuries + casualties["pedInjuries"] + casualties["bikeInjuries"];
       var total_fatalities = currentFeature.properties.total_fatalities + casualties["pedFatalities"] + casualties["bikeFatalities"];
-      var crashSummary = "Since January 2002, there have been " + total_accidents + " total accidents in Ward " + currentFeature.properties.DISTRICT + ", including " + total_injuries + " personal injuries and " + total_fatalities + " fatalities. </p><p>"
+      var crashSummary = "Since January 2002, there have been " + total_crashes + " total crashes in Ward " + currentFeature.properties.DISTRICT + ", including " + total_injuries + " personal injuries and " + total_fatalities + " fatalities. </p><p>"
 
       if (numOfIncidents > 0){
         if (numOfIncidents === 1) {
