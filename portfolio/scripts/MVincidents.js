@@ -393,10 +393,10 @@ function init() {
       var details = "<table><tr><th></th><th>CRI</th><th>Crashes</th></tr><tr><th>Pedestrian injuries  </th><td>" + casualties["pedInjuries"] + "</td><td>" + currentFeature.properties.ped_injuries + "</td></tr>" + "<tr><th>Pedestrian fatalities  </th><td>" + casualties["pedFatalities"] + "</td><td>" + currentFeature.properties.ped_fatalities + "</td></tr>" + "<tr><th>Bicyclist injuries  </th><td>" + casualties["bikeInjuries"] + "</td><td>" + currentFeature.properties.bike_injuries + "</td></tr>" + "<tr><th>Bicyclist fatalities  </th><td>" + casualties["bikeFatalities"] + "</td><td>" + currentFeature.properties.bike_fatalities + "</td></tr></table>";
 
       // Modify summary text based on if and how many incidents were logged in the ward
-      var total_crashes = currentFeature.properties.total_crashes + numOfIncidents;
+      var total_accidents = currentFeature.properties.total_accidents + numOfIncidents;
       var total_injuries = currentFeature.properties.total_injuries + casualties["pedInjuries"] + casualties["bikeInjuries"];
       var total_fatalities = currentFeature.properties.total_fatalities + casualties["pedFatalities"] + casualties["bikeFatalities"];
-      var crashSummary = "Since January 2002, there have been " + total_crashes + " total crashes in Ward " + currentFeature.properties.DISTRICT + ", including " + total_injuries + " personal injuries and " + total_fatalities + " fatalities. </p><p>"
+      var crashSummary = "Since January 2002, there have been " + total_accidents + " total crashes in Ward " + currentFeature.properties.DISTRICT + ", including " + total_injuries + " personal injuries and " + total_fatalities + " fatalities. </p><p>"
 
       if (numOfIncidents > 0){
         if (numOfIncidents === 1) {
